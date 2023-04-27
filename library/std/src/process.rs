@@ -1444,6 +1444,10 @@ impl From<fs::File> for Stdio {
 /// For proper error reporting of failed processes, print the value of `ExitStatus` or
 /// `ExitStatusError` using their implementations of [`Display`](crate::fmt::Display).
 ///
+/// The [`Default`](crate::default::Default) for ExitStatus is
+/// "process reported successful termination", i.e. the result of
+/// `ExitCode::SUCCESS.into()`.
+///
 /// # Differences from `ExitCode`
 ///
 /// [`ExitCode`] is intended for terminating the currently running process, via
